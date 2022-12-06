@@ -34,6 +34,7 @@ const currentSquare = createGridSquare(i+1);
 // Con l'evento "click", mediante la classe "clicked", poi stilizzata in CSS, impartiamo il comando di far diventare ogni singola cella di colore azzurro ogni volta che ci clicchiamo sopra.
 currentSquare.addEventListener (`click`, function(){
 this.classList.add (`clicked`);
+console.log(this.innerText)
 });
 
 // "appendChild" crea un figlio all'interno dell'elemento che seleziono, in questo caso "grid". Risultato, all'interno dell'HTML dell'elemento con id "grid" che è collegato alla variabile "grid" di javascript, vengono creati "div" pari al numero del ciclo For.
