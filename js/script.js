@@ -1,44 +1,65 @@
 
 
+
+
+
+ 
+
+
 // Questa funzione crea una "div", gli aggiunge una "classe=square" e con return la restituisce
 // ******************************************************************************
-function createGridSquare(number)
-{
+function createGridSquare(number) {
 
-// Crea un div
-const currentElement= document.createElement (`div`);
+    // Crea un div
+    const currentElement = document.createElement(`div`);
 
-// Aggiunge al Div la classe=square
-currentElement.classList.add(`square`);
+    // Aggiunge al Div la classe=square
+    currentElement.classList.add(`square`); 
 
-currentElement.innerHTML= number;
+    currentElement.innerHTML = number;
 
-// Restituzione
-return currentElement;
+    // Restituzione
+    return currentElement;
 }
 // ******************************************************************************
 
-
+document.getElementById(`button`).addEventListener(`click`, function(){
+    createGridSquare(number)
+})
 
 
 // Dichiaro la variabile "let grid" e la vado ad inserire nel div con "id=grid"
-let grid = document.getElementById (`grid`);
+let grid = document.getElementById(`grid`);
 
 
 // Ciclo che permette di generare 100 celle
 // ******************************************************************************
-for (let i=0; i<100; i++){
-const currentSquare = createGridSquare(i+1);
+for (let i = 0; i < 100; i++) {
+    const currentSquare = createGridSquare(i + 1);
 
 
-// Con l'evento "click", mediante la classe "clicked", poi stilizzata in CSS, impartiamo il comando di far diventare ogni singola cella di colore azzurro ogni volta che ci clicchiamo sopra.
-currentSquare.addEventListener (`click`, function(){
-this.classList.add (`clicked`);
-console.log(this.innerText)
-});
+    // Con l'evento "click", mediante la classe "clicked", poi stilizzata in CSS, impartiamo il comando di far diventare ogni singola cella di colore azzurro ogni volta che ci clicchiamo sopra.
+    currentSquare.addEventListener(`click`, function () {
+        this.classList.add(`clicked`);
+        console.log(this.innerText)
+    });
 
-// "appendChild" crea un figlio all'interno dell'elemento che seleziono, in questo caso "grid". Risultato, all'interno dell'HTML dell'elemento con id "grid" che è collegato alla variabile "grid" di javascript, vengono creati "div" pari al numero del ciclo For.
-grid.appendChild(currentSquare);
+    // "appendChild" crea un figlio all'interno dell'elemento che seleziono, in questo caso "grid". Risultato, all'interno dell'HTML dell'elemento con id "grid" che è collegato alla variabile "grid" di javascript, vengono creati "div" pari al numero del ciclo For.
+    grid.appendChild(currentSquare);
 
 }
 // ******************************************************************************
+
+// let play=document.getElementById (`play`)
+
+// play.addEventListener(`click`, function () {
+//     if (document.getElementById) {
+//         if (document.getElementById(id).style.display == 'none') {
+//             document.getElementById(id).style.display = 'block';
+//         } else {
+//             document.getElementById(id).style.display = 'none';
+//         }
+//     }
+// }
+
+
