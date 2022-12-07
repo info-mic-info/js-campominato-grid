@@ -1,5 +1,8 @@
 
-
+document.getElementById(`button`).addEventListener(`click`, function(){
+    createGridSquare()
+    document.querySelector(`.grid`).innerHTML = ``;
+})
 
 
 
@@ -23,9 +26,7 @@ function createGridSquare(number) {
 }
 // ******************************************************************************
 
-document.getElementById(`button`).addEventListener(`click`, function(){
-    createGridSquare(number)
-})
+
 
 
 // Dichiaro la variabile "let grid" e la vado ad inserire nel div con "id=grid"
@@ -34,6 +35,7 @@ let grid = document.getElementById(`grid`);
 
 // Ciclo che permette di generare 100 celle
 // ******************************************************************************
+
 for (let i = 0; i < 100; i++) {
     const currentSquare = createGridSquare(i + 1);
 
